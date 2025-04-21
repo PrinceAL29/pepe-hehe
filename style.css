@@ -12,10 +12,6 @@ h1, a, p {
     font-family: sans-serif
 }
 
-.img-container {
-    /* background-color: red; */
-}
-
 img {
     display: block;
     margin: auto;
@@ -25,17 +21,19 @@ img {
 
 @keyframes pepeDance {
     0% {
-        /* transform: scaleX(-1); */
-        transform: translateX(90%)rotateZ(180deg);;
+        transform: translateX(180%)rotateZ(-90deg);;
     }
-    20% {
-        transform: rotateZ(360deg);
+    5% {
+        transform: rotateZ(-200deg);
+    }
+    10%{
+        transform: rotateZ(-360deg);
     }
     50% {
-        transform: translateX(-90%);
+        transform: translateX(-180%);
     }
     100% {
-        /* transform: scaleX(1); */
-        transform: translateX(90%);
+
+        transform: translateX(180%);
     }
 }
