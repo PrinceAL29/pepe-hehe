@@ -1,0 +1,41 @@
+body {
+    background-color: cornflowerblue;
+}
+
+a {
+    width: 100%;
+    display: block;
+}
+
+h1, a, p {
+    text-align: center;
+    font-family: sans-serif
+}
+
+.img-container {
+    /* background-color: red; */
+}
+
+img {
+    display: block;
+    margin: auto;
+    animation: pepeDance 3s infinite ;
+} 
+
+
+@keyframes pepeDance {
+    0% {
+        /* transform: scaleX(-1); */
+        transform: translateX(300px)rotateZ(180deg);;
+    }
+    20% {
+        transform: rotateZ(360deg);
+    }
+    50% {
+        transform: translateX(-300px);
+    }
+    100% {
+        /* transform: scaleX(1); */
+        transform: translateX(300px);
+    }
+}
