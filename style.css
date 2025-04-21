@@ -26,16 +26,16 @@ img {
 @keyframes pepeDance {
     0% {
         /* transform: scaleX(-1); */
-        transform: translateX(300px)rotateZ(180deg);;
+        transform: translateX(90%)rotateZ(180deg);;
     }
     20% {
         transform: rotateZ(360deg);
     }
     50% {
-        transform: translateX(-300px);
+        transform: translateX(-90%);
     }
     100% {
         /* transform: scaleX(1); */
-        transform: translateX(300px);
+        transform: translateX(90%);
     }
 }
