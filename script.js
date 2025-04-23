@@ -9,7 +9,7 @@ const ctx = canvas.getContext('2d')
 const image = new Image()
 image.src = 'media/img.webp'
 
-const imgSize = 150
+const imgSize = 250
 const speed = 20
 let x = (canvas.width - imgSize) / 2
 let y = (canvas.height - imgSize)
