@@ -15,9 +15,15 @@ let x = (canvas.width - imgSize) / 2
 let y = (canvas.height - imgSize)
 let keysPressed = {}
 let facingLeft = false
+let isBackflipping = false
+let flipAngle = 0
 
 document.addEventListener("keydown", (e) => {
     keysPressed[e.code] = true
+    if (e.code === "Space" && !isBackflipping) {
+        isBackflipping = true
+        flipAngle = 0
+    }
 })
 
 document.addEventListener("keyup", (e) => {
@@ -46,13 +52,28 @@ function drawPepe() {
 
     ctx.save()
 
-    if (facingLeft) {
-        ctx.translate(x + imgSize, y)
-        ctx.scale(-1, 1)
-    } else {
-        ctx.translate(x, y)
+    const centerX = x + imgSize / 2
+    const centerY = y + imgSize / 2
+
+    ctx.translate(centerX, centerY)
+
+    if (isBackflipping) {
+        const rotationSpeed = facingLeft ? 0.36 : -0.36
+        flipAngle += rotationSpeed
+
+        if ((facingLeft ? flipAngle : -flipAngle) >= 2 * Math.PI) {
+            isBackflipping = false
+            flipAngle = 0
+        }
+
+        ctx.rotate(flipAngle)
     }
-    ctx.drawImage(image, 0, 0, imgSize, imgSize)
+
+    if (facingLeft && !isBackflipping) {
+        ctx.scale(-1, 1)
+    }
+
+    ctx.drawImage(image, -imgSize / 2, -imgSize / 2, imgSize, imgSize)
     ctx.restore()
 }
 
